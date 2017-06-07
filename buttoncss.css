@@ -1,0 +1,54 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2 mai 2017, 11:26:26
+    Author     : Luc Nguegan
+*/
+
+ul {
+ padding:0;
+ margin:0;
+ list-style-type:none;
+ }
+li {
+ margin-left:2px;
+ float:left; /*pour IE*/
+ 
+ }
+ul li a {
+ 
+ float:left;   
+ width:300px;
+ height: 19px;
+ background-color:#009999;
+ color:black;
+ text-decoration:none;
+ text-align:center;
+ padding:5px;
+ border:2px solid;
+ color:white; 
+ /*pour avoir un effet "outset" avec IE :*/
+ border-color:#DCDCDC #696969 #696969 #DCDCDC;
+ }
+ul li a:hover {
+ background-color:#D3D3D3;
+ border-color:#696969 #DCDCDC #DCDCDC #696969;
+ 
+ }
+
+ul ul{
+     display: none;
+}
+ 
+ li:hover ul.level2 { /*Lorsqu'une balise li de niveau 2 est survolée par la souris, elle sera affichée
+                      Réf: http://www.css-faciles.com/menu-deroulant.php*/
+     display: block;
+     
+     
+ }
+ 
+ 
+ 
