@@ -15,7 +15,7 @@ ul {
  }
 li {
  margin-left:2px;
- float:left; /*pour IE*/
+ float:left; /*for IE*/
  
  }
 ul li a {
@@ -48,6 +48,25 @@ ul ul{
      display: block;
      
      
+ }
+ 
+ table
+ {
+    border-collapse: collapse;
+    position: center;
+    
+    
+ }
+ 
+ td, th, tr
+ {
+     border: 3px solid black;
+     
+ }
+ 
+ #dep
+ {
+     background-color: #1abc9c;
  }
  
  

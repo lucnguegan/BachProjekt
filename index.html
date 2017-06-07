@@ -13,6 +13,7 @@ and open the template in the editor.
         <!--link rel = "stylesheet" type = "text/css"  href = "Teamcss.css" /-->
     </head>
     <body>
+        <header>
         <!--div>TODO write content</div-->
         <h1>Intranet Bisso Na Bisso</h1>
         <div id="horizontal_menu" >
@@ -43,11 +44,44 @@ and open the template in the editor.
         
 </ul>
         </div>
-
+        </header>
         <br /><br /><br /><br /><br /> <br /> 
-        <?php
+        <!--Table containing the computers parameters-->
+        <table id="table">
+            <caption id="caption">Liste der Computer</caption>
+            <thead>
+                <tr>
+                    <th>Abteilung</th>
+                    <th>Name</th>
+                    <th>IP-Adress</th>
+                    <th>MAC-Adress</th>
+                    <th>Subnet Mask</th>
+                    <th>OS</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td>MRT</td>
+                    <td>IBM</td>
+                    <td>192.168.0.12</td>
+                    <td>11:22:33:44:55:66</td>
+                    <td>255.255.255.0</td>
+                    <td>Ubuntu</td>
+                </tr>
+                <tr>
+                    <td>Anmeldung</td>
+                    <td>Lenovo</td>
+                    <td>192.168.0.14</td>
+                    <td>5e:19:8f:a1:3c:aa</td>
+                    <td>255.255.255.0</td>
+                    <td>Windows 10</td>
+                </tr>
+            </tbody>
+        </table>
+      <!--  <?php
         include("arrayCreation.php");
         ?>
-        
+        -->
     </body>
 </html>
