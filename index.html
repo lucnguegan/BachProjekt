@@ -52,7 +52,7 @@ and open the template in the editor.
             <thead>
                 <tr>
                     <th>Abteilung</th>
-                    <th>Name</th>
+                    <th>Hersteller</th>
                     <th>IP-Adress</th>
                     <th>MAC-Adress</th>
                     <th>Subnet Mask</th>
@@ -111,6 +111,22 @@ and open the template in the editor.
                 </tr>
             </tbody>
         </table>
+        <p>Gerät hinzufügen:</p>
+        <form method ="post" action="">
+            <p>
+                <label for="Abteilung">Wählen Sie bitte die Abteilung</label><br />
+                <select name="Abteilung" id="abt">                    
+                    <option value="Anmeldung">Anmeldung</option>
+                    <option value="Buchhaltung">Buchhaltung</option>
+                    <option value="MRT">MRT</option>
+                    <option value="Röntgen">Röntgen</option>
+                    <option value="CT">CT</option>             
+                </select>
+            </p>
+            <p>
+                <input type="submit" value="Schicken" />
+            </p>
+        </form>
       <!--  <?php
         include("arrayCreation.php");
         ?>
