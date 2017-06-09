@@ -15,10 +15,25 @@ class computer
     private $ipadr;
     private $macadr;
     private $submask;
+    private $computers = array($abteilung, $hersteller, $ipadr, $macadr, $submask);
     
     public function __construct($abteilung, $hersteller, $ipadr, $macadr, $submask)
     {
-        $this->$a
         
+        this-$abteilung = $abteilung;
+        this-$hersteller = $hersteller;
+        this-$ipadr = $ipadr;
+        this-$macadr = $macadr;
+        this-$submask = $submask;
     }
+    
+    for ($index = 0;
+    $index < count($array);
+    $index++) {
+    
 }
+    
+    
+}
+?>
+
