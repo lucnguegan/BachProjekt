@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formular für Rechner</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" type = "text/css"  href = "buttoncss.css" />
+    </head>
+    <body>
+        <header>
+        <!--div>TODO write content</div-->
+        <h1>Intranet Bisso Na Bisso</h1>
+        <div id="horizontal_menu" >
+        <ul class="level1">
+
+        <li>
+                <a href="index.html">Home</a>
+        </li>
+        
+        <li>
+                <a href="Teamhtml.html">Team</a>
+        </li>
+        
+        <li>                
+            <a id="abteilungen">Abteilungen</a>               
+            <ul class="level2">              
+                <li><a href="Anmeldunghtml.html" id="anmeldung">Anmeldung</a></li><br />
+                <li><a href ="Buchhaltunghtml.html" id="buchhaltung">Buchhaltung</a></li><br />
+                <li><a href ="Mrthtml.html" id="mrt">MRT</a></li><br />
+                <li><a href="Roentgenhtml.html" id="roentgen">R&oumlntgen</a></li><br />
+                <li><a href="Cthtml.html" id="ct">CT</a></li><br />
+            </ul>
+        </li>
+        
+        <li>
+                <a href="Neuigkeitenhtml.html">Neuigkeiten</a>
+        </li>
+        
+</ul>
+        </div>
+        </header>
+        <br /><br /><br /><br /><br /> <br /> 
+        Ip-Adresse:                 <input type="number" value="192" name="ipadr0" min="100" size="1" max="255">.
+                    <input type="number" value="168" name="ipadr1" min="100" size="1" max="255">.
+                    <input type="number" value="0" name="ipadr2" min="100" size="1" max="255">.
+                    <input type="number" placeholder="XXX" name="ipadr3" min="100" size="1" max="254"><br /><br />
+                    Hersteller:     <input type="text" placeholder="Ex: Lenovo" name =" manufacturer"><br /><br />
+                    Mac Adresse:    <input type="text" value="" name="mac0" size="1">:
+                    <input type="text" value="" name="mac1" size="1">:
+                    <input type="text" value="" name="mac2" size="1">:
+                    <input type="text" value="" name="mac3" size="1">:
+                    <input type="text" value="" name="mac4" size="1">:
+                    <input type="text" value="" name="mac5" size="1"><br /><br />
+                    Subnet Mask:    <input type="number" value="255" name="ipadr0" min="100" size="1" max="255">.
+                    <input type="number" value="255" name="ipadr1" min="100" size="1" max="255">.
+                    <input type="number" value="255" name="ipadr2" min="100" size="1" max="255">.
+                    <input type="number" placeholder="XXX" name="ipadr3" min="100" size="1" max="254"><br /><br />
+                    Betriebssystem: <input type="text" placeholder="Ex: Archlinux" name =" manufacturer"><br /><br />
+                    
+                    <form action="">
+                        <input type="submit" value ="Daten prüfen" >
+                    </form>
+    </body>
+</html>

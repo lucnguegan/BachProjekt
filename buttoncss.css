@@ -69,5 +69,14 @@ ul ul{
      background-color: #1abc9c;
  }
  
+ #botbut
+ {
+     display: inline-block;
+     
+ }
  
+ #returnToStart
+ {
+     margin-left: 5px;
+ }
  
