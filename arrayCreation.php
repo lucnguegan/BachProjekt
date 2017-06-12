@@ -1,5 +1,6 @@
 <?php 
 
+    
     $abt = filter_input(INPUT_POST, 'abteilung');
     if($abt === 'Anmeldung')
     {
@@ -19,7 +20,9 @@
         echo 'Sie haben das Röntgen ausgewälht';
     } 
 ?>
-
+<form method="post">
+    $_abt = $abt;
+</form>
 <?php
 class Computer
 {
@@ -44,7 +47,7 @@ class Computer
         $this->setSubmask($submask);
         $this->setOs($os);
         
-        
+       
         
     }
     
@@ -86,21 +89,9 @@ class Computer
     
     
 }
-?>
-<button type="button">Löschen</button>
-<?php  
-
 $rechner = new Computer('Anmeldung', 'IBM', '192.168.0.22', '11:22:33:44:55:66', '255.255.255.0', 'Archlinux');
 ?>
 <br><br><br>
 
-<form action ="index.html" id="botbut"> 
-    <input id ="returnToStart" type="submit" value="Zurück zur Startseite" />
-</form>
-
-<form action ="Formularhtml.html" id="botbut"> 
-    <input id ="" type="submit" value="Zu formular" />
-</form>
-    
 
 
