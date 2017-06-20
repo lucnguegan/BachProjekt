@@ -20,7 +20,7 @@ and open the template in the editor.
         <ul class="level1">
 
         <li>
-                <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
         </li>
         
         <li>
@@ -46,11 +46,12 @@ and open the template in the editor.
         </div>
         </header>
         <br /><br /><br /><br /><br /> <br /> 
+        
         <!--Table containing the computers parameters-->
-        <table id="table">
+        <table id="table" style="width: 50%">
             <caption id="caption">Liste der Computer</caption>
-            <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Abteilung</th>
                     <th>Hersteller</th>
                     <th>IP-Adress</th>
@@ -58,72 +59,26 @@ and open the template in the editor.
                     <th>Subnet Mask</th>
                     <th>OS</th>
                 </tr>
-            </thead>
-            
-            <tbody>
-                <tr>
-                    <td>MRT</td>
-                    <td>IBM</td>
-                    <td>192.168.0.12</td>
-                    <td>11:22:33:44:55:66</td>
-                    <td>255.255.255.0</td>
-                    <td>Ubuntu</td>
-                </tr>
-                <tr>
-                    <td>Anmeldung</td>
-                    <td>Lenovo</td>
-                    <td>192.168.0.14</td>
-                    <td>5e:19:8f:a1:3c:aa</td>
-                    <td>255.255.255.0</td>
-                    <td>Windows 10</td>
-                </tr>
-                <tr>
-                    <td>Buchhaltung</td>
-                    <td>Compaq</td>
-                    <td>192.168.0.33</td>
-                    <td>4f:90:87:21:1d:23</td>
-                    <td>255.255.255.0</td>
-                    <td>Windows 7</td>
-                </tr>
-                <tr>
-                    <td>Röntgen</td>
-                    <td>Asus</td>
-                    <td>192.168.0.64</td>
-                    <td>2a:95:59:2b:8f:76</td>
-                    <td>255.255.255.0</td>
-                    <td>Windows XP</td>
-                </tr>
-                <tr>
-                    <td>CT</td>
-                    <td>Philips</td>
-                    <td>192.168.0.124</td>
-                    <td>65:5d:4e:31:54:20</td>
-                    <td>255.255.255.0</td>
-                    <td>Archlinux</td>
-                </tr>
-                <!--tr>
-                    <td><?php include("arrayCreation.php")?></td>
-                    <td><?php include("")?></td>
-                    <td><?php include("")?></td>
-                    <td><?php include("")?></td>
-                    <td><?php include("")?></td>
-                    <td><?php include("")?></td>
-                </tr-->
-            </tbody>
-        </table>
+        <?php
+            include("Dbconnectphp.php");
+            $query = "SELECT * FROM Computers";
+            $stat = $db->query($query);
+            $tab = $stat->fetchAll();
+           
         
-        <br /><br />
+            foreach($tab as $line)
+            {
+                echo "<tr><td>".$line["ID"]."</td><td>".$line["Abteilung"]."</td><td>".$line["Hersteller"]."</td><td>".$line["IP"]."</td><td>".$line["MAC"]."</td><td>".$line["Sub"]."</td><td>".$line["Os"]."</td></tr>";
+            }
+        ?>            
+        </table><br /><br />
         
-
         <form method ="post" action="Formularhtml.html">
             <p>
                 <input type="submit" value="Gerät hinzufügen">
             </p>
-        </form>
-      <!--  <?php
-        include("arrayCreation.php");
-        ?>
-        --><br /><br />
+        </form><br /><br />        
         
     </body>
+    
 </html>

@@ -1,4 +1,4 @@
-<?php 
+<!--?php 
 
     $abt = filter_input(INPUT_POST, 'abteilung');
     if($abt === 'Anmeldung')
@@ -18,9 +18,9 @@
     {
         echo 'Sie haben das Röntgen ausgewälht';
     } 
-?>
+?-->
 
-<?php
+<!--?php
 class Computer
 {
     private $_abteilung;    //Departement for the computer
@@ -86,9 +86,9 @@ class Computer
     
     
 }
-?>
-<button type="button">Löschen</button>
-<?php  
+?-->
+<!--button type="button">Löschen</button>
+<!--?php  
 
 $rechner = new Computer('Anmeldung', 'IBM', '192.168.0.22', '11:22:33:44:55:66', '255.255.255.0', 'Archlinux');
 ?>
@@ -100,7 +100,18 @@ $rechner = new Computer('Anmeldung', 'IBM', '192.168.0.22', '11:22:33:44:55:66',
 
 <form action ="Formularhtml.html" id="botbut"> 
     <input id ="" type="submit" value="Zu formular" />
-</form>
-    
-
+</form-->
+<?php
+            include("updateDatasphp.php");
+            $query = "SELECT * FROM Computers";
+            $stat = $conn->query($query);
+            $tab = $stat->fetchAll();
+            print_r($tab);
+            die();
+        
+            foreach($tab as $line)
+            {
+                echo "<tr><td>".$line["Abteilung"]."</td><td>".$line["Hersteller"]."</td><td>".$line["IP-Adress"]."</td><td>".$line["MAC-Adress"]."</td><td>".$line["Subnet Mask"]."</td><td>".$line["OS"]."</td></tr>";
+            }
+?>      
 

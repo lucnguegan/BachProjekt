@@ -53,14 +53,14 @@ ul ul{
  table
  {
     border-collapse: collapse;
-    
-        
+    width: 50%;       
     
  }
  
  td, th, tr
  {
      border: 3px solid black;
+     
      
  }
  
