@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html lang="de">
     <head >
         <title>Willkommen an der Praxis --- Intranet</title>
         <meta charset="UTF-8">
@@ -71,7 +71,8 @@ and open the template in the editor.
             
             foreach($tab as $line)
             {
-                echo "<tr><td>".$line["ID"]."</td><td>".$line["Abteilung"]."</td><td>".$line["Hersteller"]."</td><td>".$line["IP"]."</td><td>".$line["MAC"]."</td><td>".$line["Sub"]."</td><td>".$line["Os"]."</td><td><a href=''>Bearbeiten</a></td><td><a href=''>Löschen</a></tr>";
+                $id = $line["ID"];
+                echo "<tr><td>".$id."</td><td>".$line["Abteilung"]."</td><td>".$line["Hersteller"]."</td><td>".$line["IP"]."</td><td>".$line["MAC"]."</td><td>".$line["Sub"]."</td><td>".$line["Os"]."</td><td><a href='UpdateComputerphp.php?id=$id'>Bearbeiten</a></td><td><a href='removeComputerphp.php?id=$id'>Löschen</a></tr>";
             }
         ?>            
                 

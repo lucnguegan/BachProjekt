@@ -52,8 +52,8 @@ $insert->execute(array($abt, $her, $ip, $mac, $sub, $os));
 header('Location:index.php');
 ?>
 
-<form action ="Formularhtml.html">
-    <input type="submit" Value = "Zurück zum Formular">
+<form>
+    <input type="submit" Value = "Zurück zum Formular" onClick="history.go(-1);return true;">
 </form>
 <form action =" ">
     <input type="submit" Value = "Weiter">
