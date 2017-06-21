@@ -42,6 +42,10 @@ echo "Subnet Mask: ".$sub."<br><br>";
 $os = filter_input(INPUT_POST, 'os');
 echo "Betriebssystem: ".$os."<br><br>";
 
+//Edit the line
+$edit = filter_input(INPUT_POST, 'edit');
+echo "";
+
 //insert datas of computer on Database named "Bissonabisso" and the table named "Computers"
 $insert=$db->prepare("INSERT INTO Computers(Abteilung, Hersteller, IP, MAC, Sub, Os) VALUES(?,?,?,?,?,?)");
 $insert->execute(array($abt, $her, $ip, $mac, $sub, $os));

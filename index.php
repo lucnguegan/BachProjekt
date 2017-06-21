@@ -57,20 +57,24 @@ and open the template in the editor.
                     <th>IP-Adress</th>
                     <th>MAC-Adress</th>
                     <th>Subnet Mask</th>
-                    <th>OS</th>
+                    <th>Betriebssystem</th>
+                    <th>Bearbeiten</th>
+                    <th>Löschen</th>
                 </tr>
+                
         <?php
             include("Dbconnectphp.php");
             $query = "SELECT * FROM Computers";
             $stat = $db->query($query);
             $tab = $stat->fetchAll();
            
-        
+            
             foreach($tab as $line)
             {
-                echo "<tr><td>".$line["ID"]."</td><td>".$line["Abteilung"]."</td><td>".$line["Hersteller"]."</td><td>".$line["IP"]."</td><td>".$line["MAC"]."</td><td>".$line["Sub"]."</td><td>".$line["Os"]."</td></tr>";
+                echo "<tr><td>".$line["ID"]."</td><td>".$line["Abteilung"]."</td><td>".$line["Hersteller"]."</td><td>".$line["IP"]."</td><td>".$line["MAC"]."</td><td>".$line["Sub"]."</td><td>".$line["Os"]."</td><td><a href=''>Bearbeiten</a></td><td><a href=''>Löschen</a></tr>";
             }
         ?>            
+                
         </table><br /><br />
         
         <form method ="post" action="Formularhtml.html">

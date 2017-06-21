@@ -12,7 +12,7 @@ if(isset(filter_input(INPUT_GET, 'id')))
 }
 if(isset(filter_input(INPUT_GET, 'submit')))
 {
-    $query = "UPDATE Computers SET Abteilung='".$abt."', Hersteller='".$her."', IP='".$ip."', MAC='".$mac."', Sub='".$sub."', Os='".$os."'";
+    $query = "UPDATE Computers SET Abteilung='".$abt."', Hersteller='".$her."', IP='".$ip."', MAC='".$mac."', Sub='".$sub."', Os='".$os."";
     
     $update = updateComputer($query);
     
