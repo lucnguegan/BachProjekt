@@ -1,3 +1,46 @@
+<?php
+include ('./Dbconnectphp.php');
+//Opening the database
+$db=new PDO("mysql:host=localhost; dbname=Bissonabisso", "root", "");
+//$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+//Ready the request
+$pdoStat = $db->prepare("update Computers set Abteilung=:Abteilung, Hersteller=:Hersteller, IP0=:IP0, IP1=:IP1, IP2=:IP2, IP3=:IP3,
+        MAC0=:MAC0, MAC1=:MAC1, MAC2=:MAC2, MAC3=:MAC3, MAC4=:MAC4, MAC5=:MAC5, Sub0=:Sub0, Sub1 =:Sub1, Sub2=:Sub2, Sub3=:Sub3, 
+        Os =:Os, where id=:id");
+
+$pdoStat->bindValue(':id', filter_input(INPUT_POST, 'id'), PDO::PARAM_INT);
+$pdoStat->bindValue(':Abteilung', filter_input(INPUT_POST, 'Abteilung'), PDO::PARAM_STR);
+$pdoStat->bindValue(':Hersteller', filter_input(INPUT_POST, 'Hersteller'), PDO::PARAM_STR);
+$pdoStat->bindValue(':IP0', filter_input(INPUT_POST, 'IP0'), PDO::PARAM_INT);
+$pdoStat->bindValue(':IP1', filter_input(INPUT_POST, 'IP1'), PDO::PARAM_INT);
+$pdoStat->bindValue(':IP2', filter_input(INPUT_POST, 'IP2'), PDO::PARAM_INT);
+$pdoStat->bindValue(':IP3', filter_input(INPUT_POST, 'IP3'), PDO::PARAM_INT);
+$pdoStat->bindValue(':MAC0', filter_input(INPUT_POST, 'MAC0'), PDO::PARAM_STR);
+$pdoStat->bindValue(':MAC1', filter_input(INPUT_POST, 'MAC1'), PDO::PARAM_STR);
+$pdoStat->bindValue(':MAC2', filter_input(INPUT_POST, 'MAC2'), PDO::PARAM_STR);
+$pdoStat->bindValue(':MAC3', filter_input(INPUT_POST, 'MAC3'), PDO::PARAM_STR);
+$pdoStat->bindValue(':MAC4', filter_input(INPUT_POST, 'MAC4'), PDO::PARAM_STR);
+$pdoStat->bindValue(':MAC5', filter_input(INPUT_POST, 'MAC5'), PDO::PARAM_STR);
+$pdoStat->bindValue(':Sub0', filter_input(INPUT_POST, 'Sub0'), PDO::PARAM_INT);
+$pdoStat->bindValue(':Sub1', filter_input(INPUT_POST, 'Sub1'), PDO::PARAM_INT);
+$pdoStat->bindValue(':Sub2', filter_input(INPUT_POST, 'Sub2'), PDO::PARAM_INT);
+$pdoStat->bindValue(':Sub3', filter_input(INPUT_POST, 'Sub3'), PDO::PARAM_INT);
+$pdoStat->bindValue(':Os', filter_input(INPUT_POST, 'Os'), PDO::PARAM_STR);
+
+//Execute the request
+$executeIsOk = $pdoStat->execute();
+
+var_dump($pdoStat->errorInfo());
+
+if($executeIsOk)
+{
+    $msg = "Computer erfolgreich aktualisiert";
+}
+ else {
+     $msg = "Felher bei der Aktualisierung";
+}
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -6,7 +49,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Computer hinzufügen</title>
+        <title>Computer Aktualisieren</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" type = "text/css"  href = "buttoncss.css" />
@@ -45,50 +88,15 @@ and open the template in the editor.
         </div>
         </header>
         <br /><br /><br /><br /><br /> <br />
-        <form method ="post" action="arrayCreation.php">
-            <p>
-                <label for="Abteilung">Wählen Sie bitte die Abteilung</label><br />
-                                
-                <input type="radio" value="Anmeldung" name="abteilung" /> Anmeldung<br>                 
-                <input type ="radio" value="Buchhaltung" name="abteilung" /> Buchhaltung<br>
-                <input type ="radio" value="MRT" name="abteilung" /> MRT<br>
-                <input type = "radio" value="Röntgen" name = "abteilung" /> Röntgen<br>
-                <input type ="radio" value="CT" name = "abteilung" /> CT<br>
-                
-            </p>
-            <p>
-            
-                <input type="submit" value="Next" name="next" />
-                
-            
-            </p>
-            
-        </form>
+        <p><?= $msg?></p>
+        
         <br /><br /><br />
-      <!--  <div id="botbut">
-           
-                <button id ="addComp" type="submit" onclick="computer(document.getElementById('anmeldung'))">Computer hinzufügen</button>
-           
-            
-            <form action ="index.html" id="botbut"> 
-                <input id ="returnToStart" type="submit" value="Zurück zur Startseite" />
-            </form>
-        </div>
-        <script type="text/javascript">
-            function computer(field)
-            {
-                //var abteilung = prompt("Geben Sie bitte die Abteilung: ", "");
-                <label for="Abteilung">Wählen Sie bitte die Abteilung</label><br />
-                <select name="Abteilung" id="abt">                    
-                    <option value="Anmeldung">Anmeldung</option>
-                    <option value="Buchhaltung">Buchhaltung</option>
-                    <option value="MRT">MRT</option>
-                    <option value="Röntgen">Röntgen</option>
-                    <option value="CT">CT</option>             
-                </select>
-            }
-        </script>-->
-      
+        <form action ="index.php" id="botbut"> 
+    <input id ="returnToStart" type="submit" value="Zurück zur Startseite" />
+</form>
+        <form>
+    <input type="submit" Value = "Zurück zur Modifikation" onClick="history.go(-1);return true;">
+</form>
       
     </body>
 </html>

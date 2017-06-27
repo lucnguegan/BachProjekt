@@ -43,8 +43,8 @@ $os = filter_input(INPUT_POST, 'os');
 echo "Betriebssystem: ".$os."<br><br>";
 
 //insert datas of computer on Database named "Bissonabisso" and the table named "Computers"
-$insert=$db->prepare("INSERT INTO Computers(Abteilung, Hersteller, IP, MAC, Sub, Os) VALUES(?,?,?,?,?,?)");
-$insert->execute(array($abt, $her, $ip, $mac, $sub, $os));
+$insert=$db->prepare("INSERT INTO Computers(Abteilung, Hersteller, IP0, IP1, IP2, IP3, MAC0, MAC1, MAC2, MAC3, MAC4, MAC5, Sub0, Sub1, Sub2, Sub3, Os) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+$insert->execute(array($abt, $her, $ip0, $ip1, $ip2, $ip3, $mac0, $mac1, $mac2, $mac3, $mac4, $mac5, $sub0, $sub1, $sub2, $sub3, $os));
 header('Location:index.php');
 ?>
 

@@ -54,20 +54,9 @@ and open the template in the editor.
                     <th>ID</th>
                     <th>Abteilung</th>
                     <th>Hersteller</th>
-                    <th>IP 1</th>
-                    <th>IP 2</th>
-                    <th>IP 3</th>
-                    <th>IP 4</th>
-                    <th>MAC 1</th>
-                    <th>MAC 2</th>
-                    <th>MAC 3</th>
-                    <th>MAC 4</th>
-                    <th>MAC 5</th>
-                    <th>MAC 6</th>
-                    <th>Subnet 1</th>
-                    <th>Subnet 2</th>
-                    <th>Subnet 3</th>
-                    <th>Subnet 4</th>
+                    <th>IP-Adress</th>
+                    <th>MAC-Adress</th>
+                    <th>Subnet-Adress</th>
                     <th>Betriebssystem</th>
                     <th>Bearbeiten</th>
                     <th>Löschen</th>
@@ -83,10 +72,7 @@ and open the template in the editor.
             foreach($tab as $line)
             {
                 $id = $line["ID"];
-                echo "<tr><td>".$id."</td><td>".$line["Abteilung"]."</td><td>".$line["Hersteller"]."</td><td>".$line["IP0"]."</td>"
-                        . "<td>".$line["IP1"]."</td><td>".$line["IP2"]."</td><td>".$line["IP3"]."</td><td>".$line["MAC0"]."</td>"
-                        . "<td>".$line["MAC1"]."</td><td>".$line["MAC2"]."</td><td>".$line["MAC3"]."</td><td>".$line["MAC4"]."</td><td>".$line["MAC5"]."</td><td>".$line["Sub0"]."</td>"
-                        . "<td>".$line["Sub1"]."</td><td>".$line["Sub2"]."</td><td>".$line["Sub3"]."</td><td>".$line["Os"]."</td><td><a href='UpdateComputerphp.php?id=$id'>Bearbeiten</a></td><td><a href='removeComputerphp.php?id=$id'>Löschen</a></tr>";
+                echo "<tr><td>".$id."</td><td>".$line["Abteilung"]."</td><td>".$line["Hersteller"]."</td><td>".$line["IP0"].".".$line["IP1"].".".$line["IP2"].".".$line["IP3"]."</td><td>".$line["MAC0"].".".$line["MAC1"].".".$line["MAC2"].".".$line["MAC3"].".".$line["MAC4"].".".$line["MAC5"]."</td><td>".$line["Sub0"].".".$line["Sub1"].".".$line["Sub2"].".".$line["Sub3"]."</td><td>".$line["Os"]."</td><td><a href='UpdateComputerphp.php?ID=$id'>Bearbeiten</a></td><td><a href='removeComputerphp.php?ID=$id'>Löschen</a></tr>";
             }
         ?>            
                 

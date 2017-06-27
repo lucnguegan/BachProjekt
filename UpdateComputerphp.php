@@ -1,17 +1,3 @@
-<!--?php
-   if(!empty(filter_input(INPUT_GET, 'id')))
-{
-    $id = filter_input(INPUT_GET, 'id');
-    $query = "SELECT FROM Computers WHERE id=$id";
-    include ('./Dbconnectphp.php');
-    $db->exec($query);
-    header("Location:index.php");
-}
-else
-{
-    header("Location:Formularhtml.html");
-}
-?-->
 <?php
 //Opening the database
 $db=new PDO("mysql:host=localhost; dbname=Bissonabisso", "root", "");
@@ -34,15 +20,17 @@ $computer = $pdoStat->fetch();
         <title>Rechner bearbeiten</title>
     </head>
     <body>
-        <form action="datenPruefen.php" method="post">
-        <label>Abteilung: </label>
+        <form action="AddComputerphp.php" method="post">
+           <input type="hidden" name="id" value="<?= $computer['id']; ?>"><br><br><br>
+         <!--   
+        <label >Abteilung: </label>
                 <select name="abt">                    
                     <option value="Anmeldung">Anmeldung</option>
                     <option value="Buchhaltung">Buchhaltung</option>
                     <option value="MRT">MRT</option>
                     <option value="Röntgen">Röntgen</option>
                     <option value="CT">CT</option>             
-                </select><br><br>
+                </select><br><br>-->
         Ip-Adresse:                 <input type="number" name="ipadr0" value ="<?= $computer['IP0'];?>" min="100" size="1" max="255">.
                     <input type="number" name="ipadr1" min="100" size="1" max="255" value ="<?= $computer['IP1'];?>">.
                     <input type="number" name="ipadr2" min="0" size="1" max="255" value ="<?= $computer['IP2'];?>">.
@@ -62,5 +50,8 @@ $computer = $pdoStat->fetch();
                                     
                         <input type="submit" value ="Rechner modifizieren" >
                     </form>
+        <form>
+    <input type="submit" Value = "Zurück" onClick="history.go(-1);return true;">
+</form>
     </body>
 </html>
