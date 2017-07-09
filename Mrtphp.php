@@ -4,23 +4,20 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html lang="de">
-    <head >
-        <title>Willkommen an der Praxis --- Intranet</title>
+<html>
+    <head>
+        <title>MRT-Abteilung</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel = "stylesheet" type = "text/css"  href = "buttoncss.css" />
-        <!--link rel = "stylesheet" type = "text/css"  href = "Teamcss.css" /-->
+        <link rel="stylesheet" type="text/css" href="buttoncss.css" />
     </head>
     <body>
-        <header>
-        <!--div>TODO write content</div-->
         <h1>Intranet Bisso Na Bisso</h1>
         <div id="horizontal_menu" >
         <ul class="level1">
 
         <li>
-            <a href="index.php">Home</a>
+                <a href="index.php">Home</a>
         </li>
         
         <li>
@@ -44,12 +41,10 @@ and open the template in the editor.
         
 </ul>
         </div>
-        </header>
+
         <br /><br /><br /><br /><br /> <br /> 
-        
-        <!--Table containing the computers parameters-->
         <table id="table" style="width: 50%">
-            <caption id="caption">Liste der Computer</caption>
+            <caption id="caption">Liste der Computer an der MRT-Abteilung</caption>
                 <tr>
                     <th>ID</th>
                     <th>Abteilung</th>
@@ -64,7 +59,7 @@ and open the template in the editor.
                 
         <?php
             include("Dbconnectphp.php");
-            $query = "SELECT * FROM Computers";
+            $query = "SELECT * FROM Computers WHERE Abteilung ='MRT'";
             $stat = $db->query($query);
             $tab = $stat->fetchAll();
            
@@ -74,16 +69,6 @@ and open the template in the editor.
                 $id = $line["ID"];
                 echo "<tr><td>".$id."</td><td>".$line["Abteilung"]."</td><td>".$line["Hersteller"]."</td><td>".$line["IP0"].".".$line["IP1"].".".$line["IP2"].".".$line["IP3"]."</td><td>".$line["MAC0"].".".$line["MAC1"].".".$line["MAC2"].".".$line["MAC3"].".".$line["MAC4"].".".$line["MAC5"]."</td><td>".$line["Sub0"].".".$line["Sub1"].".".$line["Sub2"].".".$line["Sub3"]."</td><td>".$line["Os"]."</td><td><a href='UpdateComputerphp.php?ID=$id'>Bearbeiten</a></td><td><a href='removeComputerphp.php?ID=$id'>Löschen</a></tr>";
             }
-        ?>            
-                
-        </table><br /><br />
-        
-        <form method ="post" action="Formularhtml.html">
-            <p>
-                <input type="submit" value="Gerät hinzufügen">
-            </p>
-        </form><br /><br />        
-        
+        ?>
     </body>
-    
 </html>

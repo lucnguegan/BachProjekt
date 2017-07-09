@@ -1,30 +1,29 @@
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html lang="de">
-    <head >
-        <title>Willkommen an der Praxis --- Intranet</title>
+<html>
+    <head>
+        <title>Anmeldung-Abteilung</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel = "stylesheet" type = "text/css"  href = "buttoncss.css" />
-        <!--link rel = "stylesheet" type = "text/css"  href = "Teamcss.css" /-->
+        <link rel="stylesheet" type="text/css" href="buttoncss.css" />
     </head>
     <body>
-        <header>
         <!--div>TODO write content</div-->
         <h1>Intranet Bisso Na Bisso</h1>
         <div id="horizontal_menu" >
         <ul class="level1">
 
         <li>
-            <a href="index.php">Home</a>
+                <a href="index.php">Home</a>
         </li>
         
         <li>
-                <a href="Teamphp.php">Team</a>
+            <a href="Teamphp.php">Team</a>
         </li>
         
         <li>                
@@ -44,12 +43,10 @@ and open the template in the editor.
         
 </ul>
         </div>
-        </header>
+
         <br /><br /><br /><br /><br /> <br /> 
-        
-        <!--Table containing the computers parameters-->
         <table id="table" style="width: 50%">
-            <caption id="caption">Liste der Computer</caption>
+            <caption id="caption">Liste der Computer an der Anmeldung-Abteilung</caption>
                 <tr>
                     <th>ID</th>
                     <th>Abteilung</th>
@@ -64,7 +61,7 @@ and open the template in the editor.
                 
         <?php
             include("Dbconnectphp.php");
-            $query = "SELECT * FROM Computers";
+            $query = "SELECT * FROM Computers WHERE Abteilung ='Mrt'";
             $stat = $db->query($query);
             $tab = $stat->fetchAll();
            
@@ -77,13 +74,5 @@ and open the template in the editor.
         ?>            
                 
         </table><br /><br />
-        
-        <form method ="post" action="Formularhtml.html">
-            <p>
-                <input type="submit" value="Gerät hinzufügen">
-            </p>
-        </form><br /><br />        
-        
     </body>
-    
 </html>

@@ -22,21 +22,21 @@ and open the template in the editor.
         </li>
         
         <li>
-                <a href="Teamhtml.html">Team</a>
+            <a href="Teamphp.php">Team</a>
         </li>
         
         <li>                
             <a id="abteilungen">Abteilungen</a>               
             <ul class="level2">              
-                <li><a href="Anmeldunghtml.html" id="anmeldung">Anmeldung</a></li><br />
-                <li><a href = "Buchhaltunghtml.html" id="buchhaltung">Buchhaltung</a></li><br />
-                <li><a href ="Mrthtml.html" id="mrt">MRT</a></li><br />
-                <li><a href="Roentgenhtml.html" id="roentgen" id="roentgen">R&oumlntgen</a></li><br />
+                <li><a href="Anmeldungphp.php" id="anmeldung">Anmeldung</a></li><br />
+                <li><a href = "Buchhaltungphp.php" id="buchhaltung">Buchhaltung</a></li><br />
+                <li><a href ="Mrtphp.php" id="mrt">MRT</a></li><br />
+                <li><a href="Roentgenphp.php" id="roentgen" id="roentgen">R&oumlntgen</a></li><br />
             </ul>
         </li>
         
         <li>
-            <a href="Neuigkeitenhtml.html">Neuigkeiten</a>
+            <a href="Neuigkeitenphp.php">Neuigkeiten</a>
         </li>
         
 </ul>
