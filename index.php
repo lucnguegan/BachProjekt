@@ -63,7 +63,8 @@ and open the template in the editor.
                 </tr>
                 
         <?php
-            include("Dbconnectphp.php");
+            
+            include './Dbconnectphp.php';
             $query = "SELECT * FROM Computers";
             $stat = $db->query($query);
             $tab = $stat->fetchAll();
@@ -71,8 +72,8 @@ and open the template in the editor.
             
             foreach($tab as $line)
             {
-                $id = $line["ID"];
-                echo "<tr><td>".$id."</td><td>".$line["Abteilung"]."</td><td>".$line["Hersteller"]."</td><td>".$line["IP0"].".".$line["IP1"].".".$line["IP2"].".".$line["IP3"]."</td><td>".$line["MAC0"].".".$line["MAC1"].".".$line["MAC2"].".".$line["MAC3"].".".$line["MAC4"].".".$line["MAC5"]."</td><td>".$line["Sub0"].".".$line["Sub1"].".".$line["Sub2"].".".$line["Sub3"]."</td><td>".$line["Os"]."</td><td><a href='UpdateComputerphp.php?ID=$id'>Bearbeiten</a></td><td><a href='removeComputerphp.php?ID=$id'>Löschen</a></tr>";
+                $id = $line["id"];
+                echo "<tr><td>".$id."</td><td>".$line["Abteilung"]."</td><td>".$line["Hersteller"]."</td><td>".$line["IP0"].".".$line["IP1"].".".$line["IP2"].".".$line["IP3"]."</td><td>".$line["MAC0"].":".$line["MAC1"].":".$line["MAC2"].":".$line["MAC3"].":".$line["MAC4"].":".$line["MAC5"]."</td><td>".$line["Sub0"].".".$line["Sub1"].".".$line["Sub2"].".".$line["Sub3"]."</td><td>".$line["Os"]."</td><td><a href='UpdateComputerphp.php?id=$id'>Bearbeiten</a></td><td><a href='removeComputerphp.php?id=$id'>Löschen</a></tr>";
             }
         ?>            
                 

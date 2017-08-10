@@ -1,16 +1,17 @@
 <?php
-//Opening the database
-$db=new PDO("mysql:host=localhost; dbname=Bissonabisso", "root", "");
-$pdoStat = $db->prepare("SELECT * FROM Computers WHERE id=:id");
-$pdoStat->bindValue(':id', filter_input(INPUT_GET, 'id'), PDO::PARAM_INT);
+include './Dbconnectphp.php';
+$objetPdo = new PDO("mysql:host=localhost; dbname=Bissonabisso", "root", "");
 
-//Execute the request
-$query = $pdoStat->execute();
+$pdoStat = $objetPdo->prepare('SELECT * FROM Computers WHERE id = :id');
 
-//Get the Computer
-$computer = $pdoStat->fetch();
+$pdoStat->bindvalue(':id', filter_input(INPUT_GET, 'id'), PDO::PARAM_INT);
+
+$executeIsOk = $pdoStat->execute();
+
+$tab = $pdoStat->fetch();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -20,35 +21,34 @@ $computer = $pdoStat->fetch();
         <title>Rechner bearbeiten</title>
     </head>
     <body>
-        <form action="AddComputerphp.php" method="post">
-           <input type="hidden" name="id" value="<?= $computer['id']; ?>"><br><br><br>
-         <!--   
+        <form action ="updateDatasphp.php" method="post">
+           <input type="hidden" name="ID" value="<?php echo $tab['id']; ?>"><br><br><br>
         <label >Abteilung: </label>
                 <select name="abt">                    
-                    <option value="Anmeldung">Anmeldung</option>
-                    <option value="Buchhaltung">Buchhaltung</option>
-                    <option value="MRT">MRT</option>
-                    <option value="Röntgen">Röntgen</option>
-                    <option value="CT">CT</option>             
-                </select><br><br>-->
-        Ip-Adresse:                 <input type="number" name="ipadr0" value ="<?= $computer['IP0'];?>" min="100" size="1" max="255">.
-                    <input type="number" name="ipadr1" min="100" size="1" max="255" value ="<?= $computer['IP1'];?>">.
-                    <input type="number" name="ipadr2" min="0" size="1" max="255" value ="<?= $computer['IP2'];?>">.
-                    <input type="number" placeholder="XXX" name="ipadr3" min="10" size="1" max="254" value="<?= $computer['IP3'];?>"><br /><br />
-                    Hersteller:     <input type="text" placeholder="Ex: Lenovo" name ="manufacturer" value ="<?= $computer['Hersteller'];?>"><br /><br />
-                    Mac Adresse:    <input type="text" name="mac0" size="1" value="<?= $computer['MAC0'];?>">:
-                    <input type="text" value ="<?= $computer['MAC1'];?>" name="mac1" size="1">:
-                    <input type="text" value ="<?= $computer['MAC2'];?>" name="mac2" size="1">:
-                    <input type="text" value ="<?= $computer['MAC3'];?>" name="mac3" size="1">:
-                    <input type="text" value ="<?= $computer['MAC4'];?>" name="mac4" size="1">:
-                    <input type="text" value ="<?= $computer['MAC5'];?>" name="mac5" size="1"><br /><br />
-                    Subnet Mask:    <input type="number" name="sub0" min="100" size="1" max="255" value ="<?= $computer['Sub0'];?>">.
-                    <input type="number" name="sub1" min="100" size="1" max="255" value ="<?= $computer['Sub1'];?>">.
-                    <input type="number" name="sub2" min="100" size="1" max="255" value ="<?= $computer['Sub2'];?>">.
-                    <input type="number" placeholder="XXX" name="sub3" min="0" size="1" max="254" value="<?= $computer['Sub3'];?>"><br /><br />
-                    Betriebssystem: <input type="text" placeholder="Ex: Archlinux" name ="os" value ="<?= $computer['Os'];?>"><br /><br />
+                    <option value="<?php echo $tab['Abteilung']; ?>">Anmeldung</option>
+                    <option value="<?php echo $tab['Abteilung']; ?>">Buchhaltung</option>
+                    <option value="<?php echo $tab['Abteilung']; ?>">MRT</option>
+                    <option value="<?php echo $tab['Abteilung']; ?>">Röntgen</option>
+                    <option value="<?php echo $tab['Abteilung']; ?>">CT</option>             
+                </select><br><br>
+        Ip-Adresse:                 <input type="number" name="ipadr0" value ="<?php echo $tab['IP0'];?>" min="100" size="1" max="255">.
+                    <input type="number" name="ipadr1" min="100" size="1" max="255" value ="<?php echo $tab['IP1'];?>">.
+                    <input type="number" name="ipadr2" min="0" size="1" max="255" value ="<?php echo $tab['IP2'];?>">.
+                    <input type="number" placeholder="XXX" name="ipadr3" min="10" size="1" max="254" value="<?php echo $tab['IP3'];?>"><br /><br />
+                    Hersteller:     <input type="text" placeholder="Ex: Lenovo" name ="manufacturer" value ="<?php echo $tab['Hersteller'];?>"><br /><br />
+                    Mac Adresse:    <input type="text" name="mac0" size="1" value="<?php echo $tab['MAC0'];?>">:
+                    <input type="text" value ="<?php echo $tab['MAC1'];?>" name="mac1" size="1">:
+                    <input type="text" value ="<?php echo $tab['MAC2'];?>" name="mac2" size="1">:
+                    <input type="text" value ="<?php echo $tab['MAC3'];?>" name="mac3" size="1">:
+                    <input type="text" value ="<?php echo $tab['MAC4'];?>" name="mac4" size="1">:
+                    <input type="text" value ="<?php echo $tab['MAC5'];?>" name="mac5" size="1"><br /><br />
+                    Subnet Mask:    <input type="number" name="sub0" min="100" size="1" max="255" value ="<?php echo $tab['Sub0'];?>">.
+                    <input type="number" name="sub1" min="100" size="1" max="255" value ="<?php echo $tab['Sub1'];?>">.
+                    <input type="number" name="sub2" min="100" size="1" max="255" value ="<?php echo $tab['Sub2'];?>">.
+                    <input type="number" placeholder="XXX" name="sub3" min="0" size="1" max="254" value="<?php echo $tab['Sub3'];?>"><br /><br />
+                    Betriebssystem: <input type="text" placeholder="Ex: Archlinux" name ="os" value ="<?php echo $tab['Os'];?>"><br /><br />
                                     
-                        <input type="submit" value ="Rechner modifizieren" >
+                        <input action ="updateDatasphp.php"   type="submit" value ="Rechner modifizieren" >
                     </form>
         <form>
     <input type="submit" Value = "Zurück" onClick="history.go(-1);return true;">
