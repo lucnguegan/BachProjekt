@@ -33,6 +33,7 @@ and open the template in the editor.
                 <li><a href = "Buchhaltungphp.php" id="buchhaltung">Buchhaltung</a></li><br />
                 <li><a href ="Mrtphp.php" id="mrt">MRT</a></li><br />
                 <li><a href="Roentgenphp.php" id="roentgen" id="roentgen">R&oumlntgen</a></li><br />
+                <li><a href="Ctphp.php" id="ct">CT</a></li><br />
             </ul>
         </li>
         

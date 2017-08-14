@@ -61,7 +61,7 @@ and open the template in the editor.
                 
         <?php
             include("Dbconnectphp.php");
-            $query = "SELECT * FROM Computers WHERE Abteilung ='Mrt'";
+            $query = "SELECT * FROM Computers WHERE Abteilung ='Anmeldung'";
             $stat = $db->query($query);
             $tab = $stat->fetchAll();
            
