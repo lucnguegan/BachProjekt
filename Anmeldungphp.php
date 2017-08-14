@@ -38,7 +38,7 @@ and open the template in the editor.
         </li>
         
         <li>
-                <a href="Neuigkeitenphp.php">Neuigkeiten</a>
+                <a href="Neuigkeitenphp.php">Infos</a>
         </li>
         
 </ul>
