@@ -6,21 +6,19 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Team der Praxis</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <link rel = "stylesheet" type = "text/css"  href = "buttoncss.css" />
-         <link rel = "stylesheet" type = "text/css"  href = "Teamcss.css" />
+        <link rel = "stylesheet" type = "text/css"  href = "buttoncss.css" />
+        <link rel = "stylesheet" type = "text/css"  href = "Teamcss.css" />
     </head>
     <body id="body">
         <!--div>TODO write content</div-->
         <h1>Intranet Bisso Na Bisso</h1>
-      <?php
+        <?php
             include './Menuphp.php';
         ?>
 
-        
-        
         <br /><br /><br /><br /><br /> <br /> 
        
         <div><h1>Hier finden Sie bald das ganze Team unsere Praxis</h1></div>
