@@ -1,5 +1,5 @@
-<? php
 
+<html>
 <div id="horizontal_menu" >
         <ul class="level1">
 
@@ -28,4 +28,5 @@
         
 </ul>
         </div>
-?>
+        </html>
+
